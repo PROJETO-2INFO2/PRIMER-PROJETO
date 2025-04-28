@@ -64,7 +64,7 @@ const produtos = [
     <nav>
       <div class="logo">
         <img src="../src/components/image/B-World.png" alt="Logo" />
-        <h1>Apreço a leitura</h1>
+        <p>Apreço a leitura</p>
       </div>
 
       <form action="/buscar" method="GET">
@@ -104,9 +104,10 @@ const produtos = [
   </header>
 
   <main>
-    <section>
-      <div class="banner">
-        <p>Autor de Abril</p>
+    <section class="banner">
+      <div class="ban">
+        <div class="texto">
+          <p>Autor de Abril</p>
         <h1>Eric-Emanuel Schmitt</h1>
         <p>
           Eric-Emmanuel Schmitt has been awarded more than 20 literary prizes and distinctions, and
@@ -114,8 +115,11 @@ const produtos = [
           translated into over 40 languages.
         </p>
         <button>Acessar página do livro</button>
+        </div>
+      <div>
+        <img src="../src/components/image/book.png" alt="Banner" />
       </div>
-      <img src="../src/components/image/book.png" alt="Banner" />
+    </div>
     </section>
     <section class="ofertas">
       <div class="frete">
@@ -157,12 +161,128 @@ const produtos = [
       <span class="fa-solid fa-phone"></span><p>+55 47 40045263</p>
       <span class="fa-solid fa-clock"></span><p>8h às 23h - Seg a Sex</p>
       <span class="fa-solid fa-envelope"></span><p>contato@ifbooks.com</p>
-      <img src="image/VISA-card-logo- 1.png" alt="">
-      <img src="image/MasterCard-Logo-1979 1.png" alt="">
-      <img src="image/VISA-card-logo- 1.png" alt="">
+
+      <img src="../src/components/image/paipal 1.png" alt="">
+      <img src="../src/components/image/MasterCard-Logo-1979 1.png" alt="">
+      <img src="../src/components/image/VISA-card-logo- 1.png" alt="">
     </div>
   </footer>
 </template>
 
 <style scoped>
+  * {
+    margin: 0 20px;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    background-color: #F1F1F1;
+    color: #231F2D;
+  }
+  header {
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  }
+
+  nav {
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    color: #27AE60;
+  }
+
+  .logo img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+  }
+
+  form {
+    align-items: center;
+    margin-left: auto;
+  }
+
+  form input[type="text"] {
+    border-radius: 1px;
+    border: 4px solid #F1F1F1;
+    background-color: #F1F1F1;
+  }
+
+  form button {
+    border-radius: 1px;
+    border: 4px solid #F1F1F1;
+    background-color: #F1F1F1;
+    color: #231F2D;
+    cursor: pointer;
+  }
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    margin-left: auto;
+  }
+
+  ul li {
+    margin: 0;
+  }
+  ul li a {
+    text-decoration: none;
+    color: #231F2D;
+    margin: 0 10px;
+  }
+  ul li a:hover {
+    color: #27AE60;
+  }
+  ul li span {
+    font-size: 20px;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  ul li span:hover {
+    color: #27AE60;
+  }
+  main {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  }
+  .banner {
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 20px;
+    padding: 30px 10px;
+  }
+  .ban {
+    display: flex;
+  }
+  .ban div img {
+    width: auto;
+    height: 80%;
+  }
+  .ban .texto {
+    font-size: 20px;
+    padding: 0 10px;
+  }
+  .ban .texto p {
+    padding: 5px 0 5px 0;
+  }
+  .ban h1 {
+    font-size: 40px;
+    color: #231F2D;
+  }
+  .ban button {
+    background-color: #27AE60;
+    color: #F1F1F1;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  .ban button:hover {
+    background-color: #1E7A50;
+  }
 </style>
