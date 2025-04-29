@@ -64,7 +64,8 @@ const produtos = [
     <nav>
       <div class="logo">
         <img src="../src/components/image/B-World.png" alt="Logo" />
-        <p>Apreço a leitura</p>
+        <p>Apreço a <br>
+           leitura</p>
       </div>
 
       <form action="/buscar" method="GET">
@@ -182,13 +183,14 @@ const produtos = [
   header {
     justify-content: space-between;
     align-items: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
 
   nav {
     margin: 0 20px;
     display: flex;
     align-items: center;
+  
   }
 
   .logo {
@@ -198,9 +200,11 @@ const produtos = [
   }
 
   .logo img {
-    width: 50px;
-    height: auto;
+    width: auto;
+    height: 50%;
     margin-right: 10px;
+    border-right:solid  #27AE60;
+    padding: 10px;
   }
 
   form {
@@ -255,6 +259,8 @@ const produtos = [
     align-items: center;
     margin: 20px 20px;
     padding: 30px 10px;
+    border-bottom: solid #27AE60;
+    border-top:solid  #27AE60 ;
   }
   .ban {
     display: flex;
