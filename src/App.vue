@@ -1,5 +1,6 @@
 <script setup>
-const produtos = [
+import { ref } from "vue";
+const produtos = ref([
     {
         id: 1,
         titulo: 'Chain of Iron: Volume 2',
@@ -56,7 +57,12 @@ const produtos = [
         preco: 15.81,
         capa: '../src/components/image/8.png',
     }
-];
+]);
+const carrinho = ref([]);
+const mostrarCarrinho = ref(false)
+function adicionarAoCarrinho(index) {
+  carrinho.value.push(produtos.value[index])
+}
 </script>
 
 <template>
@@ -91,7 +97,7 @@ const produtos = [
       <div>
         <ul>
           <li>
-            <span class="fa-solid fa-cart-shopping"></span>
+            <span @click="mostrarCarrinho = !mostrarCarrinho" class="fa-solid fa-cart-shopping"></span>
           </li>
           <li>
             <span class="fa-solid fa-heart"></span>
@@ -105,7 +111,7 @@ const produtos = [
   </header>
 
   <main>
-    <section class="banner">
+    <section class="banner" v-if="!mostrarCarrinho">
       <div class="ban">
         <div class="texto">
           <p>Autor de Abril</p>
@@ -122,7 +128,7 @@ const produtos = [
       </div>
     </div>
     </section>
-    <section class="ofertas">
+    <section class="ofertas" v-if="!mostrarCarrinho">
       <div class="frete">
         <span class="fa-solid fa-truck"></span>
         <p>Frete grátis para SC</p>
@@ -136,17 +142,37 @@ const produtos = [
         <p>Mais vendidos</p>
       </div>
     </section>
-    <section class="Lancamentos">
+    <section class="Lancamentos" v-if="!mostrarCarrinho">
       <h2>Lançamentos</h2>
       <div class="livros">
-        <div v-for="produto in produtos" :key="produto.id" class="livro">
-          <img :src="produto.capa" alt="Capa do livro" />
-          <h3>{{ produto.titulo }}</h3>
-          <p>{{ produto.resenha }}</p>
-          <p>R$ {{ produto.preco.toFixed(2) }}</p>
-          <button>Adicionar ao carrinho</button>
+        <div v-for="(item, index) of produtos" :key="index" class="livro">
+          <img :src="item.capa" alt="Capa do livro" />
+          <h3>{{ item.titulo }}</h3>
+          <p>{{ item.resenha }}</p>
+          <p>R$ {{ item.preco.toFixed(2) }}</p>
+          <button @click="adicionarAoCarrinho(index)">Adicionar ao carrinho</button>
         </div>
       </div>
+    </section>
+    <section class="carrinho" v-if="mostrarCarrinho">
+      <ul>
+        <li>
+          <h2>Carrinho de Compras</h2>
+          <span @click="mostrarCarrinho = false" class="fa-solid fa-xmark"></span>
+        </li>
+      </ul>
+      <ul>
+        <li v-for="(item, index) of carrinho">
+          <img :src="item.capa" alt="capa">
+          <h3>{{ item.titulo }}</h3>
+          <p>{{ item.resenha }}</p>
+          <p>R$ {{ item.preco.toFixed(2) }}</p>
+          <button @click="carrinho.splice(index, 1)">Remover</button>
+        </li>
+      </ul>
+        <h2>Total: R$ {{ carrinho.reduce((total, item) => total + item.preco, 0).toFixed(2) }}</h2>
+        <button @click="mostrarCarrinho = false">Finalizar compra</button>
+        <button @click="carrinho = []">Limpar carrinho</button>
     </section>
   </main>
 
