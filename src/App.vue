@@ -155,12 +155,23 @@ function adicionarAoCarrinho(index) {
     </section>
     <section class="carrinho" v-if="mostrarCarrinho">
       <ul>
-        <li v-for="(item, index) of carrinho">
-          <img :src="item.capa" alt="capa">
-
+        <li>
+          <h2>Carrinho de Compras</h2>
+          <span @click="mostrarCarrinho = false" class="fa-solid fa-xmark"></span>
         </li>
       </ul>
-      <h2>Carrinho</h2>
+      <ul>
+        <li v-for="(item, index) of carrinho">
+          <img :src="item.capa" alt="capa">
+          <h3>{{ item.titulo }}</h3>
+          <p>{{ item.resenha }}</p>
+          <p>R$ {{ item.preco.toFixed(2) }}</p>
+          <button @click="carrinho.splice(index, 1)">Remover</button>
+        </li>
+      </ul>
+        <h2>Total: R$ {{ carrinho.reduce((total, item) => total + item.preco, 0).toFixed(2) }}</h2>
+        <button @click="mostrarCarrinho = false">Finalizar compra</button>
+        <button @click="carrinho = []">Limpar carrinho</button>
     </section>
   </main>
 
