@@ -75,7 +75,7 @@ function adicionarAoCarrinho(index) {
 
       <form action="/buscar" method="GET">
         <input type="text" name="q" placeholder="Pesquisar..." />
-        <button type="submit">Buscar</button>
+        <button type="submit" class="form">Buscar</button>
       </form>
 
       <ul>
@@ -149,7 +149,10 @@ function adicionarAoCarrinho(index) {
           <h3>{{ item.titulo }}</h3>
           <p>{{ item.resenha }}</p>
           <p>R$ {{ item.preco.toFixed(2) }}</p>
-          <button @click="adicionarAoCarrinho(index)">Adicionar ao carrinho</button>
+          <button @click="adicionarAoCarrinho(index)">
+            <span class="fa-solid fa-cart-shopping">Comprar</span>
+          </button>
+
         </div>
       </div>
     </section>
@@ -240,7 +243,7 @@ function adicionarAoCarrinho(index) {
     background-color: #F1F1F1;
   }
 
-  form button {
+  form button.form {
     border-radius: 1px;
     border: 4px solid #F1F1F1;
     background-color: #F1F1F1;
