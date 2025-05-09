@@ -69,8 +69,18 @@ const produtos = ref([
 const carrinho = ref([])
 const mostrarCarrinho = ref(false)
 function adicionarAoCarrinho(index) {
-  carrinho.value.push(produtos.value[index])
+  carrinho.value.push({...produtos.value[index], valorTotal: produtos.value[index].preco})
 }
+
+function incrementarItemCarrinho(item) {
+  item.quantidade++
+  item.valorTotal = item.preco * item.quantidade
+}
+function decrementaritemCarrinho(item) {
+  item.quantidade--
+  item.valorTotal = item.preco * item.quantidade
+}
+let totalProdutos = ref(0);
 </script>
 
 <template>
@@ -181,13 +191,13 @@ function adicionarAoCarrinho(index) {
               <div>
                 <h3>{{ item.titulo }}</h3>
                 <p>{{ item.resenha }}</p>
-                <p>R$ {{ item.preco.toFixed(2) }}</p>
+                <p>R$ {{ item.valorTotal.toFixed(2) }}</p>
               </div>
             </div>
             <div>
-              <button @click="item.quantidade--">-</button>
+              <button @click="decrementaritemCarrinho(item); totalProdutos-= item.preco">-</button>
               <p>{{ item.quantidade }}</p>
-              <button @click="item.quantidade++">+</button>
+              <button @click="incrementarItemCarrinho(item); totalProdutos+= item.preco">+</button>
             </div>
           </li>
         </ul>
@@ -197,9 +207,9 @@ function adicionarAoCarrinho(index) {
 
       <h1>Total da compra</h1>
       <div class="quadrado">
-        <p>produtos: R$ {{ carrinho.reduce((total, item) => total + item.preco, 0).toFixed(2) }}</p>
+        <p>produtos: R$ {{ totalProdutos }}</p>
         <p>Frete: Gratis</p>
-        <p>Total: R$ {{ carrinho.reduce((total, item) => total + item.preco, 0).toFixed(2) }}</p>
+        <p>Total: R$ {{ carrinho.reduce((valorTotalotal, item) => valorTotalotal + item.preco, 0).toFixed(2) }}</p>
         <button @click="mostrarCarrinho = false">Ir para o pagamento</button>
       </div>
     </section>
