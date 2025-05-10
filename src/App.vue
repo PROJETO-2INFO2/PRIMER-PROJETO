@@ -96,17 +96,17 @@ function adicionarAoCarrinho(index) {
       <div>
         <ul>
           <li>
-            <div>
+            <div class="div">
               <span @click="mostrarCarrinho = !mostrarCarrinho" class="fa-solid fa-cart-shopping"></span>
             </div>
           </li>
           <li>
-            <div>
+            <div class="div">
               <span class="fa-solid fa-heart"></span>
             </div>
           </li>
           <li>
-           <div class="div">
+           <div>
             <span class="fa-solid fa-user"></span>
            </div>
           </li>
@@ -213,7 +213,7 @@ header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 10px 100px 20px 100px;
+  margin: 0px 100px 0px 100px;
   text-align: center;
 }
 
@@ -226,13 +226,13 @@ header nav div.logo p {
   flex-wrap: wrap;
   padding: 0px 10px;
   color: #27AE60;
+}header nav div.logo img{
+ width: 100%;
+ left: 100%;
 }
-
 header nav ul {
   display: flex;
-
 }
-
 header nav ul li {
   padding: 0px 20px;
   list-style: none;
@@ -241,10 +241,60 @@ header nav ul li {
 header nav ul li a {
   text-decoration: none;
   color:#7B7881;
-}header nav ul li span{
+  font-size:17px ;
+}header nav ul li div.div span{
   color: #27AE60;
   font-size: 20px;
   border-right: solid #27AE60;
   padding:0px 25px 0px 0px;
+}header nav ul li div span{
+ color: #27AE60;
+  font-size: 20px;
+}section.banner div.ban {
+display: flex;
+}section.banner  p.pverde {
+ color: #27AE60;
+ border: solid#27AE60;
+ padding: 10px;
+ border-radius: 10px;
+ flex-wrap: wrap;
+}section.banner div.texto{
+  margin: 100px;
+}section.banner  div div h1{
+  font-size: 45px;
+}section.banner  div div p{
+  color: #4D4C4C;
+  font-size: 25px;
+}section.banner  div div button{
+  background: #27AE60;
+  text-decoration: none;
+  padding: 15px 25px;
+  color: blanchedalmond;
+  border: none;
 }
+/*=================
+      ofertas      
+===================*/
+section.ofertas{
+  display: flex;
+  padding: 50px;
+  border-bottom:solid#27AE60 ;
+  border-top: solid#27AE60;
+  justify-content: space-between;
+  align-items: center;
+}
+section.ofertas div {
+  margin: 50px;
+  padding:0px 20px 0px 0px;
+  display: flex;
+  font-size: 30px;
+  border-right:solid#27AE60 ;
+}section.ofertas div span{
+  padding: 29px 20px;
+}section.ofertas div.vendidos{
+  border: none;
+}section.ofertas div p{
+  padding:0px 20px
+};
+
 </style>
