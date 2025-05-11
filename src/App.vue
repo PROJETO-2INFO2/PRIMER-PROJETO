@@ -235,9 +235,217 @@ let totalProdutos = ref(0);
       <img src="../src/components/image/MasterCard-Logo-1979 1.png" alt="" />
       <img src="../src/components/image/VISA-card-logo- 1.png" alt="" />
     </div>
+      <section class="copy">
+      <p>
+        © Alguns direitos reservados. IFbooks 2025.
+      </p>
+  </section>
   </footer>
 </template>
 
 <style scoped>
+header {
+  border-bottom: solid #27ae60;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 100px 0px 100px;
+  text-align: center;
+}
+header nav div.logo {
+  display: flex;
+}header nav div.logo form button{
+   background: #7b7881;
+ }
+header nav div.logo h1{
+ align-items: center;
+ text-align: center;
+ padding: 3px 0px 0px 0px;
+}
+header nav div.logo p {
+  border-left: solid #27ae60;
+  flex-wrap: wrap;
+  margin: 20px;
+  color: #27ae60;
+  text-align: left;
+  padding: 0px 0px 0px 16px;
+}
+header nav ul {
+  display: flex;
+}
+header nav ul li {
+  padding: 0px 20px;
+  list-style: none;
+}
+header nav ul li a {
+  text-decoration: none;
+  color: #7b7881;
+  font-size: 17px;
+}
+header nav ul li div.div span {
+  color: #27ae60;
+  font-size: 20px;
+  border-right: solid #27ae60;
+  padding: 0px 25px 0px 0px;
+}
+header nav ul li div span {
+  color: #27ae60;
+  font-size: 20px;
+}
+section.banner div.ban {
+  display: flex;
+}
+section.banner p.pverde {
+  color: #27ae60;
+  border: solid#27AE60;
+  padding: 14px 10px;
+  border-radius: 5px;
+  flex-wrap: wrap;
+  margin: 0px 377px 0px 0px;
+}
+section.banner div.texto {
+  margin: 100px;
+}
+section.banner div div {
+  padding: 77px;
+}
+section.banner div div h1 {
+  font-size: 45px;
+}
+section.banner div div p {
+  color: #4d4c4c;
+  font-size: 25px;
+}
+section.banner div div button {
+  background: #27ae60;
+  text-decoration: none;
+  padding: 15px 35px;
+  color: blanchedalmond;
+  border: none;
+  border-radius: 2px;
+}
+/*=================
+      ofertas
+===================*/
+section.ofertas {
+  display: flex;
+  padding: 50px;
+  border-bottom: solid#27AE60;
+  border-top: solid#27AE60;
+  justify-content: space-between;
+  align-items: center;
+}
+section.ofertas div {
+  margin: 50px;
+  padding: 0px 20px 0px 0px;
+  display: flex;
+  font-size: 30px;
+  border-right: solid#27AE60;
+}
+section.ofertas div span {
+  padding: 29px 20px;
+}
+section.ofertas div.vendidos {
+  border: none;
+}
+section.ofertas div p {
+  padding: 0px 20px;
+}
+/*=================
+     lancamentos
+===================*/
+section.Lancamentos {
+  padding: 70px;
+}
+section.Lancamentos h2 {
+  font-size: 50px;
+  margin: 20px 0px 20px 25px;
+}
+section.Lancamentos div.livros {
+  display: flex;
+  flex-wrap: wrap;
+}
+section.Lancamentos div.livros div.livro {
+  padding: 30px;
+}
+section.Lancamentos div.livros div.livro h3 {
+  font-size: 25px;
+}
+section.Lancamentos div.livros div.livro p.resenha {
+  color: #7b7881;
+}
+section.Lancamentos div.livros div.livro p {
+  font-size: 20px;
+}
+section.Lancamentos div.livros div.livro button {
+  background: #27ae60;
+  border: none;
+  padding: 17px 98px;
+  color: beige;
+  font-size: 15px;
+  border-radius: 2px;
+}
+section.Lancamentos div.livros div.livro button span {
+  padding: 5px;
+}
+/*===================
+       carrinho
+=====================*/
+section.carrinho{
+  margin: 200px 100px;
+}  section.carrinho ul{
+  flex-wrap: wrap;
+}
+section.carrinho ul li{
+   list-style: none;
+   padding: 20px;
+}section.carrinho ul li h2{
+   font-size: 50px;
+   color: #27AE60;
+}
 
+
+
+footer {
+  background: #27ae60;
+  display: flex;
+  justify-content: space-between;
+}
+footer div {
+  margin: 40px 100px;
+  color: aliceblue;
+}
+footer div p {
+  font-size: 16px;
+}
+footer div.div1 span {
+  font-size: 30px;
+  padding: 0px 17px 0px 0px;
+}
+footer div ul{
+  list-style: none;
+}
+footer div ul li{
+  display: flex;
+  align-items: center;
+  margin: 0px;
+}footer div ul li span{
+  padding: 0px 15px;
+}footer div p.vitor{
+  margin:0pc 0px 0px 50px;
+}footer div img{
+   margin:0pc 0px 0px 20px;
+}footer div ul.lista2{
+  display: flex;
+  margin: 0px 20px 0px 35px;
+  padding: 0px 10px 0px 0px;
+}section.copy{
+  text-align: center;
+  border-top: solid white;
+  background: #27AE60;
+  padding: 10px;
+  color: white;
+}
 </style>
