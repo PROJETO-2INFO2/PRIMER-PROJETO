@@ -169,7 +169,7 @@ function adicionarAoCarrinho(index) {
         </li>
       </ul>
       <ul>
-        <li v-for="(item, index) of carrinho">
+        <li v-for="(item, index) of carrinho" :key="index">
           <img :src="item.capa" alt="capa" />
           <h3>{{ item.titulo }}</h3>
           <p>{{ item.resenha }}</p>
@@ -216,12 +216,12 @@ function adicionarAoCarrinho(index) {
          <img src="../src/components/image/VISA-card-logo- 1.png" alt="" />
         </li>
       </ul>
-    
+
     </div>
   </footer>
   <section class="copy">
       <p>
-        © Alguns direitos reservados. IFbooks 2025. 
+        © Alguns direitos reservados. IFbooks 2025.
       </p>
   </section>
 </template>
@@ -310,7 +310,7 @@ section.banner div div button {
   border-radius: 2px;
 }
 /*=================
-      ofertas      
+      ofertas
 ===================*/
 section.ofertas {
   display: flex;
@@ -337,7 +337,7 @@ section.ofertas div p {
   padding: 0px 20px;
 }
 /*=================
-     lancamentos   
+     lancamentos
 ===================*/
 section.Lancamentos {
   padding: 70px;
@@ -374,7 +374,7 @@ section.Lancamentos div.livros div.livro button span {
   padding: 5px;
 }
 /*===================
-       carrinho        
+       carrinho
 =====================*/
 section.carrinho{
   margin: 200px 100px;
