@@ -80,22 +80,20 @@ function decrementaritemCarrinho(item) {
   item.quantidade--
   item.valorTotal = item.preco * item.quantidade
 }
-let totalProdutos = ref(0);
+let totalProdutos = ref(0)
 </script>
 
 <template>
   <header>
     <nav>
       <div class="logo">
-        <img src="../src/components/image/B-World.png" alt="Logo" />
-        <p>Apreço a leitura</p>
+       <h1>IFbooks</h1>
+        <p>Apreço a <br> leitura</p>
       </div>
-
       <form action="/buscar" method="GET">
         <input type="text" name="q" placeholder="Pesquisar..." />
-        <button type="submit" class="form">Buscar</button>
+        <button type="submit"><span class="fa-solid fa-magnifying-glass"></span></button>
       </form>
-
       <ul>
         <li>
           <a href="#">Termos</a>
@@ -114,27 +112,32 @@ let totalProdutos = ref(0);
       <div>
         <ul>
           <li>
-            <span
-              @click="mostrarCarrinho = !mostrarCarrinho"
-              class="fa-solid fa-cart-shopping"
-            ></span>
+            <div class="div">
+              <span
+                @click="mostrarCarrinho = !mostrarCarrinho"
+                class="fa-solid fa-cart-shopping"
+              ></span>
+            </div>
           </li>
           <li>
-            <span class="fa-solid fa-heart"></span>
+            <div class="div">
+              <span class="fa-solid fa-heart"></span>
+            </div>
           </li>
           <li>
-            <span class="fa-solid fa-user"></span>
+            <div>
+              <span class="fa-solid fa-user"></span>
+            </div>
           </li>
         </ul>
       </div>
     </nav>
   </header>
-
   <main>
     <section class="banner" v-if="!mostrarCarrinho">
       <div class="ban">
         <div class="texto">
-          <p>Autor de Abril</p>
+          <p class="pverde">Autor de Abril</p>
           <h1>Eric-Emanuel Schmitt</h1>
           <p>
             Eric-Emmanuel Schmitt has been awarded more than 20 literary prizes and distinctions,
@@ -168,10 +171,10 @@ let totalProdutos = ref(0);
         <div v-for="(item, index) of produtos" :key="index" class="livro">
           <img :src="item.capa" alt="Capa do livro" />
           <h3>{{ item.titulo }}</h3>
-          <p>{{ item.resenha }}</p>
+          <p class="resenha">{{ item.resenha }}</p>
           <p>R$ {{ item.preco.toFixed(2) }}</p>
           <button @click="adicionarAoCarrinho(index)">
-            <span class="fa-solid fa-cart-shopping">Comprar</span>
+            <span class="fa-solid fa-cart-shopping"></span>comprar
           </button>
         </div>
       </div>
@@ -191,56 +194,83 @@ let totalProdutos = ref(0);
               <div>
                 <h3>{{ item.titulo }}</h3>
                 <p>{{ item.resenha }}</p>
-                <p>R$ {{ item.valorTotal.toFixed(2) }}</p>
+                <p>R$ {{ item.preco }}</p>
               </div>
             </div>
-            <div>
+            <div class="quantidade">
               <button @click="decrementaritemCarrinho(item); totalProdutos-= item.preco">-</button>
               <p>{{ item.quantidade }}</p>
               <button @click="incrementarItemCarrinho(item); totalProdutos+= item.preco">+</button>
+            </div>
+            <div class="valor">
+              <p>R$ {{ item.valorTotal.toFixed(2) }}</p>
             </div>
           </li>
         </ul>
       </div>
 
+      <div class="loja">
       <button @click="mostrarCarrinho = !mostrarCarrinho">Voltar para loja</button>
+      </div>
 
-      <h1>Total da compra</h1>
+      <div class="perna">
+        <div class= "cuppom">
+        <input type="text" placeholder="Código do cupom" />
+        <button>Inserir Cupom</button>
+        </div>
       <div class="quadrado">
-        <p>produtos: R$ {{ totalProdutos }}</p>
+        <h1>Total da compra </h1>
+        <p>produtos: R$ </p>
         <p>Frete: Gratis</p>
-        <p>Total: R$ {{ carrinho.reduce((valorTotalotal, item) => valorTotalotal + item.preco, 0).toFixed(2) }}</p>
+        <p>Total: R$ </p>
         <button @click="mostrarCarrinho = false">Ir para o pagamento</button>
+      </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div>
+    <div class="div1">
       <p>IFbooks</p>
       <span class="fa-brands fa-square-facebook"></span>
       <span class="fa-brands fa-square-instagram"></span>
       <span class="fa-brands fa-square-twitter"></span>
     </div>
     <div>
-      <p>Contato</p>
-      <span class="fa-solid fa-phone"></span>
-      <p>+55 47 40045263</p>
-      <span class="fa-solid fa-clock"></span>
-      <p>8h às 23h - Seg a Sex</p>
-      <span class="fa-solid fa-envelope"></span>
-      <p>contato@ifbooks.com</p>
+      <p class="vitor">Contato</p>
+      <ul>
+        <li>
+          <span class="fa-solid fa-phone"></span>
+          <p>+55 47 40045263</p>
+        </li>
+        <li>
+          <span class="fa-solid fa-clock"></span>
+          <p>8h às 23h - Seg a Sex</p>
+        </li>
+        <li>
+          <span class="fa-solid fa-envelope"></span>
+          <p>contato@ifbooks.com</p>
+        </li>
+      </ul>
+      <ul class="lista2">
+        <li>
+        <img src="../src/components/image/paipal 1.png" alt="" />
+        </li>
+        <li>
+         <img src="../src/components/image/MasterCard-Logo-1979 1.png" alt="" />
+        </li>
+        <li>
+         <img src="../src/components/image/VISA-card-logo- 1.png" alt="" />
+        </li>
+      </ul>
 
-      <img src="../src/components/image/paipal 1.png" alt="" />
-      <img src="../src/components/image/MasterCard-Logo-1979 1.png" alt="" />
-      <img src="../src/components/image/VISA-card-logo- 1.png" alt="" />
     </div>
-      <section class="copy">
+  </footer>
+  <section class="copy">
       <p>
         © Alguns direitos reservados. IFbooks 2025.
       </p>
   </section>
-  </footer>
 </template>
 
 <style scoped>
@@ -394,16 +424,103 @@ section.Lancamentos div.livros div.livro button span {
        carrinho
 =====================*/
 section.carrinho{
-  margin: 200px 100px;
-}  section.carrinho ul{
-  flex-wrap: wrap;
+  margin: 100px 100px;
+}
+section.carrinho div.topo{
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 0px 0px 20px;
+}
+  section.carrinho ul{
+  display: flex;
+  flex-direction: column;
+  padding: 0px 0px 0px 20px;
 }
 section.carrinho ul li{
-   list-style: none;
-   padding: 20px;
-}section.carrinho ul li h2{
+  list-style: none;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+section.carrinho ul li div.info{
+  display: flex;
+}
+section.carrinho ul li div.info img{
+   width: 100px;
+   height: 150px;
+}
+section.carrinho ul li div.info div{
+   padding: 0px 20px;
+}
+section.carrinho ul li h2{
    font-size: 50px;
    color: #27AE60;
+}
+section.carrinho ul li div.quantidade{
+  display: flex;
+  align-items: center;
+  padding: 0px 20px;
+}
+section.carrinho ul li div.quantidade button{
+  background-color: white;
+  padding: 10px 20px;
+  font-size: 20px;
+}
+section.carrinho ul li div.quantidade p{
+  padding: 0px 20px;
+}
+section.carrinho ul li div.valor {
+  align-content: center;
+  font-size: 20px;
+}
+section.carrinho div.loja{
+  justify-content: start;
+}
+section.carrinho div.loja button{
+  padding: 20px 50px;
+  border: 2px solid #000;
+  background-color: #fff;
+  font-size: 20px;
+  border-radius: 5px;
+}
+section.carrinho div.perna{
+  margin: 50px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+section.carrinho div.perna input{
+  padding: 10px 30px 10px 30px;
+  border: 2px solid #000;
+  background-color: #fff;
+  font-size: 20px;
+  border-radius: 5px;
+}
+section.carrinho div.perna button{
+  margin: 0px 20px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #27ae60;
+  font-size: 20px;
+  color: #fff;
+  border-radius: 5px;
+}
+section
+section.carrinho div.perna{
+  padding: 10px 0px 0px 0px;
+}
+section.carrinho div.quadrado h1{
+  font-size: 30px;
+  padding: 0px 0px 20px 0px;
+}
+section.carrinho div.quadrado p{
+  font-size: 20px;
+}
+section.carrinho div.quadrado button{
+  padding: 20px 50px;
+  border: none;
+  background-color: #27AE60;
+  font-size: 20px;
+  border-radius: 5px;
 }
 
 
