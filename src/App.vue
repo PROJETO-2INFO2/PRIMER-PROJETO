@@ -6,7 +6,7 @@ const produtos = ref([
     titulo: 'Chain of Iron: Volume 2',
     resenha: 'Cassandra Clare',
     preco: 23.24,
-    capa: '../src/components/image/1.png',
+    capa: '/image/1.png',
     quantidade: 1,
   },
   {
@@ -14,7 +14,7 @@ const produtos = ref([
     titulo: 'Chain of Thorns',
     resenha: 'Cassandra Clare',
     preco: 23.24,
-    capa: '../src/components/image/2.png',
+    capa: '/image/2.png',
     quantidade: 1,
   },
   {
@@ -22,7 +22,7 @@ const produtos = ref([
     titulo: 'City of Fallen Angels',
     resenha: 'Cassandra Clare',
     preco: 13.94,
-    capa: '../src/components/image/3.png',
+    capa: '/image/3.png',
     quantidade: 1,
   },
   {
@@ -30,7 +30,7 @@ const produtos = ref([
     titulo: 'Nona the Ninth',
     resenha: 'Cassandra Clare',
     preco: 16.84,
-    capa: '../src/components/image/4.png',
+    capa: '/image/4.png',
     quantidade: 1,
   },
   {
@@ -38,7 +38,7 @@ const produtos = ref([
     titulo: 'Harlem Shuffle',
     resenha: 'Cassandra Clare',
     preco: 26.92,
-    capa: '../src/components/image/5.png',
+    capa: '/image/5.png',
     quantidade: 1,
   },
   {
@@ -46,7 +46,7 @@ const produtos = ref([
     titulo: 'Two Old Women',
     resenha: 'Colson Whitehead',
     preco: 13.95,
-    capa: '../src/components/image/6.png',
+    capa: '/image/6.png',
     quantidade: 1,
   },
   {
@@ -54,7 +54,7 @@ const produtos = ref([
     titulo: 'Carrie Soto Is Back',
     resenha: 'Taylor Jenkins Reid',
     preco: 26.04,
-    capa: '../src/components/image/7.png',
+    capa: '/image/7.png',
     quantidade: 1,
   },
   {
@@ -62,7 +62,7 @@ const produtos = ref([
     titulo: 'Book Lovers',
     resenha: 'Emily Henry',
     preco: 15.81,
-    capa: '../src/components/image/8.png',
+    capa: '/image/8.png',
     quantidade: 1,
   },
 ])
@@ -147,7 +147,7 @@ let totalProdutos = ref(0)
           <button>Acessar página do livro</button>
         </div>
         <div>
-          <img src="../src/components/image/book.png" alt="Banner" />
+          <img src="/image/book.png" alt="Banner" />
         </div>
       </div>
     </section>
@@ -254,13 +254,13 @@ let totalProdutos = ref(0)
       </ul>
       <ul class="lista2">
         <li>
-        <img src="../src/components/image/paipal 1.png" alt="" />
+        <img src="/image/paipal 1.png" alt="" />
         </li>
         <li>
-         <img src="../src/components/image/MasterCard-Logo-1979 1.png" alt="" />
+         <img src="/image/MasterCard-Logo-1979 1.png" alt="" />
         </li>
         <li>
-         <img src="../src/components/image/VISA-card-logo- 1.png" alt="" />
+         <img src="/image/VISA-card-logo- 1.png" alt="" />
         </li>
       </ul>
 
